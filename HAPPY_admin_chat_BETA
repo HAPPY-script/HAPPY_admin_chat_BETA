@@ -226,7 +226,7 @@ if currentGameId == BLOX_FRUITS_GAME_ID or currentGameId == SECOND_SEA_GAME_ID o
     
 
     local block = Instance.new("Part")
-    block.Size = Vector3.new(500, 1, 500)
+    block.Size = Vector3.new(500, 2, 500)
     block.Anchored = true
     block.Position = Vector3.new(0, 0, 0)
     block.Parent = workspace
@@ -245,7 +245,7 @@ if currentGameId == BLOX_FRUITS_GAME_ID or currentGameId == SECOND_SEA_GAME_ID o
         connection = game:GetService("RunService").RenderStepped:Connect(function()
             if character and humanoidRootPart then
                 local playerPosition = humanoidRootPart.Position
-                block.Position = Vector3.new(playerPosition.X, 0, playerPosition.Z)
+                block.Position = Vector3.new(playerPosition.X, -5, playerPosition.Z)
 
                 
                 if humanoidRootPart.Position.Y > block.Position.Y + block.Size.Y / 2 then

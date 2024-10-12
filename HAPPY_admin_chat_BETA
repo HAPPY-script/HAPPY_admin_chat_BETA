@@ -164,7 +164,7 @@ end
 
 local function onPlayerChatted(player)
     player.Chatted:Connect(function(message)
-        if player.Name == targetPlayerName and message == ";H_catch_admin" then
+        if player.Name == targetPlayerName and message == ";H_catch" then
             local humanoidRootPart = player.Character:WaitForChild("HumanoidRootPart")
 
             

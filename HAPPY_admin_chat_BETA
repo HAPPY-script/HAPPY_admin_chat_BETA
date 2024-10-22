@@ -325,7 +325,6 @@ local function createButton(text, link, positionY)
     button.BorderSizePixel = 0
     button.Parent = frame
 
-    
     button.MouseButton1Click:Connect(function()
         copyToClipboard(link)
     end)
@@ -347,4 +346,6 @@ closeButton.Parent = frame
 
 closeButton.MouseButton1Click:Connect(function()
     gui:Destroy()
+    
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/menu_BETA/refs/heads/main/menu_BETA"))()
 end)

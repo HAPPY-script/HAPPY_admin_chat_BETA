@@ -94,6 +94,9 @@ local function executeCommand(command)
     elseif command == ";H_speed" then
         print("Script for H_speed executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_SPEED/refs/heads/main/TICKEN_SPEED"))()
+    elseif command == ";H_auto_chest_sea3" then
+        print("Script for H_auto_chest_sea3 executed!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TITICKEN_AUTO_CHEST_SEA3/refs/heads/main/TICKEN_AUTO_CHEST_SEA3"))()
     end
 end
 -- Kiểm tra lệnh người dùng chat
@@ -218,8 +221,7 @@ for _, player in pairs(game.Players:GetPlayers()) do
         onPlayerChatted(player)
     end
 end
-
-
+--se
 local BLOX_FRUITS_GAME_ID = 2753915549 
 local SECOND_SEA_GAME_ID = 4442272183 
 local THIRD_SEA_GAME_ID = 7449423635 
@@ -347,5 +349,5 @@ closeButton.Parent = frame
 closeButton.MouseButton1Click:Connect(function()
     gui:Destroy()
     
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/menu_BETA/refs/heads/main/menu_BETA"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/menu/refs/heads/main/menu"))()
 end)

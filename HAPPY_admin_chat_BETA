@@ -351,3 +351,43 @@ closeButton.MouseButton1Click:Connect(function()
     
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/menu_BETA/refs/heads/main/menu_BETA"))()
 end)
+--hb
+_G.HeadSize = 1 
+_G.Disabled = true
+
+local userInputService = game:GetService("UserInputService")
+local isHoldingX = false
+
+game:GetService('RunService').RenderStepped:connect(function()
+    if _G.Disabled then
+        for i, v in next, game:GetService('Players'):GetPlayers() do
+            if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+                pcall(function()
+                    v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize, _G.HeadSize, _G.HeadSize)
+                    v.Character.HumanoidRootPart.Transparency = 1
+                    v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really white")
+                    v.Character.HumanoidRootPart.Material = "Neon"
+                    v.Character.HumanoidRootPart.CanCollide = false
+                end)
+            end
+        end
+    end
+end)
+
+userInputService.InputBegan:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.X then
+        isHoldingX = true
+        wait(1)
+        if isHoldingX then
+            _G.HeadSize = 100
+        end
+    end
+end)
+
+userInputService.InputEnded:Connect(function(input)
+    if input.KeyCode == Enum.KeyCode.X then
+        isHoldingX = false
+        wait(1)
+        _G.HeadSize = 1
+    end
+end)

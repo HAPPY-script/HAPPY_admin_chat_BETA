@@ -369,8 +369,8 @@ if isBloxFruitsGame() then
 
     local userInputService = game:GetService("UserInputService")
     local isHoldingX = false
+    local sizeResetTimer = nil
 
-    
     game:GetService('RunService').RenderStepped:connect(function()
         if _G.Disabled then
             for i, v in next, game:GetService('Players'):GetPlayers() do
@@ -387,23 +387,26 @@ if isBloxFruitsGame() then
         end
     end)
 
-    
     userInputService.InputBegan:Connect(function(input)
         if input.KeyCode == Enum.KeyCode.X then
             isHoldingX = true
-            wait(1)
+            wait(0.5)
             if isHoldingX then
                 _G.HeadSize = 77
             end
         end
     end)
 
-    
     userInputService.InputEnded:Connect(function(input)
         if input.KeyCode == Enum.KeyCode.X then
             isHoldingX = false
-            wait(1)
-            _G.HeadSize = 1
+            if not sizeResetTimer then
+                sizeResetTimer = true
+                wait(1)
+                _G.HeadSize = 1
+                wait(5)
+                sizeResetTimer = nil
+            end
         end
     end)
 else

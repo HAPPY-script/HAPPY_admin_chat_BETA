@@ -379,7 +379,7 @@ userInputService.InputBegan:Connect(function(input)
         isHoldingX = true
         wait(1)
         if isHoldingX then
-            _G.HeadSize = 100
+            _G.HeadSize = 77
         end
     end
 end)

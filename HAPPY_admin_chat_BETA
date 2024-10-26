@@ -364,7 +364,7 @@ local function isBloxFruitsGame()
 end
 
 if isBloxFruitsGame() then
-    _G.HeadSize = 1 
+    _G.HeadSize = 2
     _G.Disabled = true
 
     local userInputService = game:GetService("UserInputService")
@@ -403,8 +403,8 @@ if isBloxFruitsGame() then
             if not sizeResetTimer then
                 sizeResetTimer = true
                 wait(1)
-                _G.HeadSize = 1
-                wait(5)
+                _G.HeadSize = 2
+                wait(1)
                 sizeResetTimer = nil
             end
         end

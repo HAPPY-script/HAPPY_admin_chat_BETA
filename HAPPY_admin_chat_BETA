@@ -97,6 +97,9 @@ local function executeCommand(command)
     elseif command == ";H_auto_chest" then
         print("Script for H_auto_chest executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/CHECK_SEA_AUTO_CHEST/refs/heads/main/CHECK_SEA_AUTO_CHEST"))()
+    elseif command == ";H_toy" then
+        print("Script for H_toy executed!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_TOY/refs/heads/main/TICKEN_TOY"))()
     end
 end
 -- Kiểm tra lệnh người dùng chat

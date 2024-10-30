@@ -351,8 +351,10 @@ closeButton.Parent = frame
 
 closeButton.MouseButton1Click:Connect(function()
     gui:Destroy()
-    
+    --meu
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ITEM_MENU/refs/heads/main/ITEM_MENU"))()
+    --escape
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ESCAPE_sea2_sea3/refs/heads/main/ESCAPE_sea2_sea3"))()
 end)
 --hbox
 local bloxFruitsGameIds = {2753915549, 4442272183, 7449423635}

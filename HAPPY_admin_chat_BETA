@@ -351,10 +351,10 @@ closeButton.Parent = frame
 
 closeButton.MouseButton1Click:Connect(function()
     gui:Destroy()
-    --meu
+    --menu
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ITEM_MENU/refs/heads/main/ITEM_MENU"))()
     --escape
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ESCAPE_sea2_sea3/refs/heads/main/ESCAPE_sea2_sea3"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ESCAPE_up_normal/refs/heads/main/ESCAPE_up_normal"))()
 end)
 --hbox
 local bloxFruitsGameIds = {2753915549, 4442272183, 7449423635}
@@ -416,16 +416,4 @@ if isBloxFruitsGame() then
     end)
 else
     warn("Script chỉ hoạt động trong game Blox Fruits.")
-end
---esca
-local placeId = game.PlaceId
-
-if placeId == 4442272183 then
-    
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ESCAPE_sea2/refs/heads/main/ESCAPE_sea2"))()
-elseif placeId == 7449423635 then
-    
-    loadstring(game:HttpGet("https://github.com/HAPPY-script/ESCAPE_sea3/blob/main/ESCAPE_sea3"))()
-else
-    warn("Không phải ở Sea 2 hoặc Sea 3. Script không chạy.")
 end

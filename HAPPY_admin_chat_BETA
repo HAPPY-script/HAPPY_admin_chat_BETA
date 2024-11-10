@@ -5,7 +5,7 @@ game.StarterGui:SetCore("SendNotification", {
 })
 local player = game.Players.LocalPlayer
 
--- Chức năng thực hiện lệnh khi chat
+
 local function executeCommand(command)
     if command == ";H_menu" then
         print("Script for H_menu executed!")
@@ -102,7 +102,7 @@ local function executeCommand(command)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_TOY/refs/heads/main/TICKEN_TOY"))()
     end
 end
--- Kiểm tra lệnh người dùng chat
+
 player.Chatted:Connect(function(message)
     executeCommand(message)
 end)

@@ -397,7 +397,7 @@ if isBloxFruitsGame() then
     userInputService.InputBegan:Connect(function(input)
         if input.KeyCode == Enum.KeyCode.X then
             isHoldingX = true
-            wait(0.5)
+            wait(1)
             if isHoldingX then
                 _G.HeadSize = 77
             end

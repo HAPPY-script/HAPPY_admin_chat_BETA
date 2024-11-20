@@ -358,7 +358,7 @@ closeButton.MouseButton1Click:Connect(function()
     --esp fruit
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ESP_FRUIT/refs/heads/main/ESP_FRUIT"))()
 end)
---hbox
+--[[hbox
 local bloxFruitsGameIds = {2753915549, 4442272183, 7449423635}
 
 local function isBloxFruitsGame()
@@ -419,3 +419,4 @@ if isBloxFruitsGame() then
 else
     warn("Script chỉ hoạt động trong game Blox Fruits.")
 end
+]]

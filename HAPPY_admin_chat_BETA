@@ -10,6 +10,9 @@ local function executeCommand(command)
     if command == ";H_menu" then
         print("Script for H_menu executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/menu_BETA/refs/heads/main/menu_BETA"))()
+    elseif command == ";H_menu_tad" then
+        print("Script for H_menu_tad executed!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_MENU_TAD/refs/heads/main/TICKEN_MENU_TAD"))()
     elseif command == ";H_tp" then
         print("Script for H_tp executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_TP/refs/heads/main/TICKEN_TP"))()
@@ -102,7 +105,7 @@ local function executeCommand(command)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_TOY/refs/heads/main/TICKEN_TOY"))()
     end
 end
-
+-- Kiểm tra lệnh người dùng chat
 player.Chatted:Connect(function(message)
     executeCommand(message)
 end)
@@ -352,12 +355,32 @@ closeButton.Parent = frame
 closeButton.MouseButton1Click:Connect(function()
     gui:Destroy()
     --menu
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ITEM_MENU/refs/heads/main/ITEM_MENU"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/MENU_TAD/refs/heads/main/MENU_TAD"))()
     --escape
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ESCAPE_up_normal/refs/heads/main/ESCAPE_up_normal"))()
     --esp fruit
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ESP_FRUIT/refs/heads/main/ESP_FRUIT"))()
 end)
+--title die
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local StarterGui = game:GetService("StarterGui")
+
+
+local function sendNotification()
+    StarterGui:SetCore("SendNotification", {
+        Title = "Chat ;H_menu_tad or", 
+        Text = "Chat ;H_menu for instructions",
+        Duration = 30
+    })
+end
+
+
+player.CharacterAdded:Connect(function()
+    wait(1)  
+    sendNotification()
+end)
+
 --[[hbox
 local bloxFruitsGameIds = {2753915549, 4442272183, 7449423635}
 

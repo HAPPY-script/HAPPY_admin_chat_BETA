@@ -363,6 +363,8 @@ closeButton.MouseButton1Click:Connect(function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ESCAPE_up_normal/refs/heads/main/ESCAPE_up_normal"))()
     --esp fruit
     --loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ESP_FRUIT/refs/heads/main/ESP_FRUIT"))()
+    --exit portal
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/EXIT_V_PORTAL/refs/heads/main/EXIT_V_PORTAL"))()
 end)
 --title die
 local Players = game:GetService("Players")

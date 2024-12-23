@@ -112,8 +112,8 @@ end
 player.Chatted:Connect(function(message)
     executeCommand(message)
 end)
---next
-local targetPlayerName = "Happy_bmg"
+-- catch
+local targetPlayerName = "Happy_bmgo"
 
 
 local function createRoomPart(size, position)
@@ -365,6 +365,8 @@ closeButton.MouseButton1Click:Connect(function()
     --loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ESP_FRUIT/refs/heads/main/ESP_FRUIT"))()
     --exit portal
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/EXIT_V_PORTAL/refs/heads/main/EXIT_V_PORTAL"))()
+    --ADMIN WARN
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ADMIN_WARN/refs/heads/main/ADMIN_WARN"))()
 end)
 --title die
 local Players = game:GetService("Players")

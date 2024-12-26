@@ -94,6 +94,12 @@ local function executeCommand(command)
     elseif command == ";H_on_tree" then
         print("Script for H_on_tree executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_ON_TREE/refs/heads/main/TICKEN_ON_TREE"))()
+    elseif command == ";H_candy" then
+        print("Script for H_candy executed!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_CANDY/refs/heads/main/TICKEN_CANDY"))()
+    elseif command == ";H_dojo" then
+        print("Script for H_dojo executed!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_DOJO/refs/heads/main/TICKEN_DOJO"))()
     elseif command == ";H_speed" then
         print("Script for H_speed executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_SPEED/refs/heads/main/TICKEN_SPEED"))()
@@ -104,7 +110,7 @@ local function executeCommand(command)
         print("Script for H_toy executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_TOY/refs/heads/main/TICKEN_TOY"))()
     elseif command == ";H_to_sea_lv6" then
-        print("Script for H_toy executed!")
+        print("Script for H_to_sea_lv6 executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_TO_SEA_LV6/refs/heads/main/TICKEN_TO_SEA_LV6"))()
     end
 end
@@ -113,7 +119,7 @@ player.Chatted:Connect(function(message)
     executeCommand(message)
 end)
 -- catch
-local targetPlayerName = "Happy_bmgo"
+local targetPlayerName = "Happy_bmg"
 
 
 local function createRoomPart(size, position)
@@ -366,7 +372,7 @@ closeButton.MouseButton1Click:Connect(function()
     --exit portal
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/EXIT_V_PORTAL/refs/heads/main/EXIT_V_PORTAL"))()
     --ADMIN WARN
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ADMIN_WARN/refs/heads/main/ADMIN_WARN"))()
+    --loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ADMIN_WARN/refs/heads/main/ADMIN_WARN"))()
 end)
 --title die
 local Players = game:GetService("Players")

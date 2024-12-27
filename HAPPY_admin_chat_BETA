@@ -61,9 +61,9 @@ local function executeCommand(command)
     elseif command == ";H_raid" then
         print("Script for H_raid executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_RAID/refs/heads/main/TICKEN_RAID"))()
-    elseif command == ";H_menu_tp_sea3" then
-        print("Script for H_menu_tp_sea3 executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/MENU_TP_SEA3/refs/heads/main/MENU_TP_SEA3"))()
+    elseif command == ";H_menu_tp" then
+        print("Script for H_menu_tp executed!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/CHECK_SEA_MENU_TP/refs/heads/main/CHECK_SEA_MENU_TP"))()
     elseif command == ";H_port" then
         print("Script for H_port executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_PORT/refs/heads/main/TICKEN_PORT"))()

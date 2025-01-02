@@ -115,6 +115,9 @@ local function executeCommand(command)
     elseif command == ";H_auto_berry" then
         print("Script for H_auto_berry executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_AUTO_BERRY_SEA1/refs/heads/main/TICKEN_AUTO_BERRY"))()
+    elseif command == ";H_next_sea" then
+        print("Script for H_next_sea executed!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_NEXT_SEA/refs/heads/main/TICKEN_NEXT_SEA"))()
     end
 end
 -- Kiểm tra lệnh người dùng chat

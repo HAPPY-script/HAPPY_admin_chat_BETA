@@ -121,9 +121,6 @@ local function executeCommand(command)
     elseif command == ";H_select_melee" then
         print("Script for H_select_melee executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/SELECT_MELEE/refs/heads/main/SELECT_MELEE"))()
-    elseif command == ";H_low_shader" then
-        print("Script for H_low_shader executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/LOW_SHADER/refs/heads/main/LOW_SHADER"))()
     end
 end
 -- Kiểm tra lệnh người dùng chat

@@ -124,6 +124,9 @@ local function executeCommand(command)
     elseif command == ";H_hit_box_npc" then
         print("Script for H_hit_box_npc executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/CHECK_SEA_HIT_BOX_NPC/refs/heads/main/CHECK_SEA_HIT_BOX_NPC"))()
+    elseif command == ";H_zombie_stories" then
+        print("Script for H_zombie_stories executed!")
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_ZOMBIE_STORIES/refs/heads/main/TICKEN_ZOMBIE_STORIES"))()
     end
 end
 -- Kiểm tra lệnh người dùng chat

@@ -453,7 +453,7 @@ closeButton.MouseButton1Click:Connect(function()
     --exit portal
     loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/EXIT_V_PORTAL/refs/heads/main/EXIT_V_PORTAL"))()
     --ADMIN WARN
-    --loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ADMIN_WARN/refs/heads/main/ADMIN_WARN"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/ADMIN_WARN/refs/heads/main/ADMIN_WARN"))()
 end)
 
 --kick

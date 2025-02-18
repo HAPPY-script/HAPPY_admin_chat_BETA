@@ -102,7 +102,7 @@ local function executeCommand(command)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_DOJO/refs/heads/main/TICKEN_DOJO"))()
     elseif command == ";H_speed" then
         print("Script for H_speed executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_SPEED/refs/heads/main/TICKEN_SPEED"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_CHECK_SEVER_SPEED/refs/heads/main/TICKEN_CHECK_SEVER_SPEED"))()
     elseif command == ";H_auto_chest" then
         print("Script for H_auto_chest executed!")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_CHECK_SEA/refs/heads/main/TICKEN_CHECK_SEA_AUTO_CHEST"))()

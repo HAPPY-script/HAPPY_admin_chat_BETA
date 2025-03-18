@@ -19,145 +19,103 @@ game.StarterGui:SetCore("SendNotification", {
     Text = "🔔Chat ;H_menu for instructions📌";
     Duration = 5;
 })
-local player = game.Players.LocalPlayer
 
+--command
+local player = game.Players.LocalPlayer
+local http = game.HttpGet
+local commands = {
+    [";H_menu"] = "https://raw.githubusercontent.com/HAPPY-script/CHECK_SEVER_menu/refs/heads/main/CHECK_SEVER_menu",
+    [";H_menu_tad"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_CHECK_SEVER_MENU_TAD/refs/heads/main/TICKEN_CHECK_SEVER_MENU_TAD",
+    [";H_tp"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_TP/refs/heads/main/TICKEN_TP",
+    [";H_tp_g_pc"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_TP_G_pc/refs/heads/main/TICKEN_TP_G_pc",
+    [";H_view"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_VIEW_/refs/heads/main/TICKEN_VIEW_",
+    [";H_no_clip"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_CO_CLIP/refs/heads/main/TICKEN_NO_CLIP",
+    [";H_light"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_LIGHT/refs/heads/main/TICKEN_LIGHT",
+    [";H_ifn_zoom"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_IFN_ZOOM/refs/heads/main/TICKEN_IFN_ZOOM",
+    [";H_ifn_jump"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_IFN_JUMP/refs/heads/main/TICKEN_IFN_JUMP",
+    [";H_hunt"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_HUNT/refs/heads/main/TICKEN_HUNT",
+    [";H_hit_box"] = "https://raw.githubusercontent.com/HAPPY-script/CHECK_SEVER_HIT_BOX/refs/heads/main/CHECK_SEVER_HIT_BOX",
+    [";H_haki_v10"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_HAKI_V10/refs/heads/main/TICKEN_HAKI_V10",
+    [";H_aim_tp_g"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_AIM_TP_G/refs/heads/main/TICKEN_AIM_TP_G",
+    [";H_aim_bot"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_AIM_BOT/refs/heads/main/TICKEN_AIM_BOT",
+    [";H_fly"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_FLY/refs/heads/main/TICKEN_FLY",
+    [";H_auto_click"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_AUTO_CLICK/refs/heads/main/TICKEN_AUTO_CLICK",
+    [";H_fling"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_FLING/refs/heads/main/TICKEN_FLING",
+    [";H_raid"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_RAID/refs/heads/main/TICKEN_RAID",
+    [";H_menu_tp"] = "https://raw.githubusercontent.com/HAPPY-script/CHECK_SEA_MENU_TP/refs/heads/main/CHECK_SEA_MENU_TP",
+    [";H_port"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_PORT/refs/heads/main/TICKEN_PORT",
+    [";H_tree"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_TREE/refs/heads/main/TICKEN_TREE",
+    [";H_cake"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_CAKE/refs/heads/main/TICKEN_CAKE",
+    [";H_ice_cream"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_ICE_CREAM/refs/heads/main/TICKEN_ICE_CREAM",
+    [";H_mansion"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_MANSION/refs/heads/main/TICKEN_MANSION",
+    [";H_dark_castle"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_DARK_CASTLE/refs/heads/main/TICKEN_DARK_CASTLE",
+    [";H_castle"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_CASTLE/refs/heads/main/TICKEN_CASTLE",
+    [";H_women"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_WOMEN/refs/heads/main/TICKEN_WOMEN",
+    [";H_tiki"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_TIKI/refs/heads/main/TICKEN_TIKI",
+    [";H_on_tree"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_ON_TREE/refs/heads/main/TICKEN_ON_TREE",
+    [";H_candy"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_CANDY/refs/heads/main/TICKEN_CANDY",
+    [";H_dojo"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_DOJO/refs/heads/main/TICKEN_DOJO",
+    [";H_speed"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_CHECK_SEVER_SPEED/refs/heads/main/TICKEN_CHECK_SEVER_SPEED",
+    [";H_auto_chest"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_CHECK_SEA/refs/heads/main/TICKEN_CHECK_SEA_AUTO_CHEST",
+    [";H_toy"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_TOY/refs/heads/main/TICKEN_TOY",
+    [";H_to_sea_lv6"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_TO_SEA_LV6/refs/heads/main/TICKEN_TO_SEA_LV6",
+    [";H_auto_berry"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_AUTO_BERRY_SEA1/refs/heads/main/TICKEN_AUTO_BERRY",
+    [";H_next_sea"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_NEXT_SEA/refs/heads/main/TICKEN_NEXT_SEA",
+    [";H_select_melee"] = "https://raw.githubusercontent.com/HAPPY-script/SELECT_MELEE/refs/heads/main/SELECT_MELEE",
+    [";H_zombie_stories"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_ZOMBIE_STORIES/refs/heads/main/TICKEN_ZOMBIE_STORIES",
+    [";H_file"] = "https://raw.githubusercontent.com/HAPPY-script/FILE_GAME/refs/heads/main/FILE_GAME",
+    [";H_exploid"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_EXPLOID/refs/heads/main/TICKEN_EXPLOID",
+    [";H_skybox"] = "https://raw.githubusercontent.com/HAPPY-script/TICKEN_SKYBOX/refs/heads/main/TICKEN_SKYBOX"
+}
+
+local activeCommands = {} -- Ngăn spam lệnh gây lỗi
+
+local function notifyError(errorMessage)
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "❌ERROR❌";
+        Text = errorMessage;
+        Icon = "rbxthumb://type=Asset&id=5107154093&w=150&h=150";
+        Duration = 5;
+    })
+end
+
+local function notifySuccess(command)
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "✔️SUCCESS✔️";
+        Text = "Command " .. command .. " running";
+        Icon = "rbxthumb://type=Asset&id=13693399274&w=150&h=150";
+        Duration = 3;
+    })
+end
 
 local function executeCommand(command)
-    if command == ";H_menu" then
-        print("Script for H_menu executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/CHECK_SEVER_menu/refs/heads/main/CHECK_SEVER_menu"))()
-    elseif command == ";H_menu_tad" then
-        print("Script for H_menu_tad executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_CHECK_SEVER_MENU_TAD/refs/heads/main/TICKEN_CHECK_SEVER_MENU_TAD"))()
-    elseif command == ";H_tp" then
-        print("Script for H_tp executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_TP/refs/heads/main/TICKEN_TP"))()
-    elseif command == ";H_tp_g_pc" then
-        print("Script for H_tp_g_pc executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_TP_G_pc/refs/heads/main/TICKEN_TP_G_pc"))()
-    elseif command == ";H_view" then
-        print("Script for H_view executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_VIEW_/refs/heads/main/TICKEN_VIEW_"))()
-    elseif command == ";H_no_clip" then
-        print("Script for H_no_clip executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_CO_CLIP/refs/heads/main/TICKEN_NO_CLIP"))()
-    elseif command == ";H_light" then
-        print("Script for H_light executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_LIGHT/refs/heads/main/TICKEN_LIGHT"))()
-    elseif command == ";H_ifn_zoom" then
-        print("Script for H_ifn_zoom executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_IFN_ZOOM/refs/heads/main/TICKEN_IFN_ZOOM"))()
-    elseif command == ";H_ifn_jump" then
-        print("Script for H_ifn_jump executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_IFN_JUMP/refs/heads/main/TICKEN_IFN_JUMP"))()
-    elseif command == ";H_hunt" then
-        print("Script for H_hunt executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_HUNT/refs/heads/main/TICKEN_HUNT"))()
-    elseif command == ";H_hit_box" then
-        print("Script for H_hit_box executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/CHECK_SEVER_HIT_BOX/refs/heads/main/CHECK_SEVER_HIT_BOX"))()
-    elseif command == ";H_haki_v10" then
-        print("Script for H_haki_v10 executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_HAKI_V10/refs/heads/main/TICKEN_HAKI_V10"))()
-    elseif command == ";H_aim_tp_g" then
-        print("Script for H_aim_tp_g executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_AIM_TP_G/refs/heads/main/TICKEN_AIM_TP_G"))()
-    elseif command == ";H_aim_bot" then
-        print("Script for H_aim_bot executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_AIM_BOT/refs/heads/main/TICKEN_AIM_BOT"))()
-    elseif command == ";H_fly" then
-        print("Script for H_fly executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_FLY/refs/heads/main/TICKEN_FLY"))()
-    elseif command == ";H_auto_click" then
-        print("Script for H_auto_click executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_AUTO_CLICK/refs/heads/main/TICKEN_AUTO_CLICK"))()
-    elseif command == ";H_fling" then
-        print("Script for H_fling executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_FLING/refs/heads/main/TICKEN_FLING"))()
-    elseif command == ";H_raid" then
-        print("Script for H_raid executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_RAID/refs/heads/main/TICKEN_RAID"))()
-    elseif command == ";H_menu_tp" then
-        print("Script for H_menu_tp executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/CHECK_SEA_MENU_TP/refs/heads/main/CHECK_SEA_MENU_TP"))()
-    elseif command == ";H_port" then
-        print("Script for H_port executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_PORT/refs/heads/main/TICKEN_PORT"))()
-    elseif command == ";H_tree" then
-        print("Script for H_tree executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_TREE/refs/heads/main/TICKEN_TREE"))()
-    elseif command == ";H_cake" then
-        print("Script for H_cake executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_CAKE/refs/heads/main/TICKEN_CAKE"))()
-    elseif command == ";H_ice_cream" then
-        print("Script for H_ice_cream executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_ICE_CREAM/refs/heads/main/TICKEN_ICE_CREAM"))()
-    elseif command == ";H_mansion" then
-        print("Script for H_mansion executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_MANSION/refs/heads/main/TICKEN_MANSION"))()
-    elseif command == ";H_dark_castle" then
-        print("Script for H_dark_castle executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_DARK_CASTLE/refs/heads/main/TICKEN_DARK_CASTLE"))()
-    elseif command == ";H_castle" then
-        print("Script for H_castle executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_CASTLE/refs/heads/main/TICKEN_CASTLE"))()
-    elseif command == ";H_women" then
-        print("Script for H_women executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_WOMEN/refs/heads/main/TICKEN_WOMEN"))()
-    elseif command == ";H_tiki" then
-        print("Script for H_tiki executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_TIKI/refs/heads/main/TICKEN_TIKI"))()
-    elseif command == ";H_on_tree" then
-        print("Script for H_on_tree executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_ON_TREE/refs/heads/main/TICKEN_ON_TREE"))()
-    elseif command == ";H_candy" then
-        print("Script for H_candy executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_CANDY/refs/heads/main/TICKEN_CANDY"))()
-    elseif command == ";H_dojo" then
-        print("Script for H_dojo executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_DOJO/refs/heads/main/TICKEN_DOJO"))()
-    elseif command == ";H_speed" then
-        print("Script for H_speed executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_CHECK_SEVER_SPEED/refs/heads/main/TICKEN_CHECK_SEVER_SPEED"))()
-    elseif command == ";H_auto_chest" then
-        print("Script for H_auto_chest executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_CHECK_SEA/refs/heads/main/TICKEN_CHECK_SEA_AUTO_CHEST"))()
-    elseif command == ";H_toy" then
-        print("Script for H_toy executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_TOY/refs/heads/main/TICKEN_TOY"))()
-    elseif command == ";H_to_sea_lv6" then
-        print("Script for H_to_sea_lv6 executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_TO_SEA_LV6/refs/heads/main/TICKEN_TO_SEA_LV6"))()
-    elseif command == ";H_auto_berry" then
-        print("Script for H_auto_berry executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_AUTO_BERRY_SEA1/refs/heads/main/TICKEN_AUTO_BERRY"))()
-    elseif command == ";H_next_sea" then
-        print("Script for H_next_sea executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_NEXT_SEA/refs/heads/main/TICKEN_NEXT_SEA"))()
-    elseif command == ";H_select_melee" then
-        print("Script for H_select_melee executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/SELECT_MELEE/refs/heads/main/SELECT_MELEE"))()
-    elseif command == ";H_hit_box_npc" then
-        print("Script for H_hit_box_npc executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/CHECK_SEA_HIT_BOX_NPC/refs/heads/main/CHECK_SEA_HIT_BOX_NPC"))()
-    elseif command == ";H_zombie_stories" then
-        print("Script for H_zombie_stories executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_ZOMBIE_STORIES/refs/heads/main/TICKEN_ZOMBIE_STORIES"))()
-    elseif command == ";H_file" then
-        print("Script for H_file executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/FILE_GAME/refs/heads/main/FILE_GAME"))()
-    elseif command == ";H_exploid" then
-        print("Script for H_exploid executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_EXPLOID/refs/heads/main/TICKEN_EXPLOID"))()
-    elseif command == ";H_skybox" then
-        print("Script for H_skybox executed!")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/HAPPY-script/TICKEN_SKYBOX/refs/heads/main/TICKEN_SKYBOX"))()
+    if commands[command] and not activeCommands[command] then
+        activeCommands[command] = true -- Đánh dấu đang chạy
+        print("Executing: " .. command)
+        
+        local success, err = pcall(function()
+            local scriptContent = http(game, commands[command]) -- Gọi HttpGet đúng cách
+            if scriptContent then
+                loadstring(scriptContent)()
+                notifySuccess(command) -- Thông báo thành công
+            else
+                error("Không thể tải script từ URL!")
+            end
+        end)
+
+        if not success then
+            notifyError("Lỗi tải script:\n" .. tostring(err)) -- Thông báo lỗi
+        end
+
+        task.wait(1) -- Delay tránh spam
+        activeCommands[command] = nil -- Cho phép chạy lại lệnh sau delay
     end
 end
--- Kiểm tra lệnh người dùng chat
+
 player.Chatted:Connect(function(message)
     executeCommand(message)
 end)
+
 -- catch
 local targetPlayerName = "Happy_bmg"
 
